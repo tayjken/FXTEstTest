@@ -16,44 +16,34 @@ public class CalcModel
 	ObservableList<Operation> operations = FXCollections.observableArrayList();
 	
 	
-	
+	// no adjustments.. yet
 	public void add()
 	{
 		result.setValue(num1.doubleValue()+num2.doubleValue());
 		operations.add(new Operation(num1.doubleValue()," + ",num2.doubleValue(),result.doubleValue()));
 	}
 	
+	// after the "-" it said num1 instead of num2
 	public void subtract()
 	{
 		result.setValue(num1.doubleValue()-num2.doubleValue());
-		operations.add(new Operation(num1.doubleValue()," - ",num1.doubleValue(),result.doubleValue()));
+		operations.add(new Operation(num1.doubleValue()," - ",num2.doubleValue(),result.doubleValue()));
 	}
 
+	// no adjustments.. yet
 	public void multiply()
 	{
 		result.setValue(num1.doubleValue()*num2.doubleValue());
-		operations.add(new Operation(num1.doubleValue()," + ",num2.doubleValue(),result.doubleValue()));
+		operations.add(new Operation(num1.doubleValue()," * ",num2.doubleValue(),result.doubleValue()));
 	}
-	
-//	 public void multiply() {
-//	        result.setValue(num1.doubleValue() * num2.doubleValue());
-//	        operations.add(new Operation(num1.doubleValue(), " * ", num2.doubleValue(), result.doubleValue()));
-//	    }
 
+	// it was multipying instead of dividing: changed * -> /
 	public void divide()
 	{
-		result.setValue(num1.doubleValue()*num2.doubleValue());
+		result.setValue(num1.doubleValue()/num2.doubleValue());
 		operations.add(new Operation(num1.doubleValue()," / ",num2.doubleValue(),result.doubleValue()));
 	}
 	
-//	 public void divide() {
-//	        if (num2.get() == 0) {
-//	        	System.out.println("Cannot divide by zero");
-//	            throw new ArithmeticException("Cannot divide by zero");
-//	        }
-//	        result.setValue(num1.doubleValue() / num2.doubleValue());
-//	        operations.add(new Operation(num1.doubleValue(), " / ", num2.doubleValue(), result.doubleValue()));
-//	    }
 
 	public DoubleProperty getNum1()
 	{

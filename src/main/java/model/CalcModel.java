@@ -29,31 +29,31 @@ public class CalcModel
 		operations.add(new Operation(num1.doubleValue()," - ",num1.doubleValue(),result.doubleValue()));
 	}
 
-//	public void multiply()
-//	{
-//		result.setValue(num1.doubleValue()*num2.doubleValue());
-//		operations.add(new Operation(num1.doubleValue()," + ",num2.doubleValue(),result.doubleValue()));
-//	}
+	public void multiply()
+	{
+		result.setValue(num1.doubleValue()*num2.doubleValue());
+		operations.add(new Operation(num1.doubleValue()," + ",num2.doubleValue(),result.doubleValue()));
+	}
 	
-	 public void multiply() {
-	        result.setValue(num1.doubleValue() * num2.doubleValue());
-	        operations.add(new Operation(num1.doubleValue(), " * ", num2.doubleValue(), result.doubleValue()));
-	    }
+//	 public void multiply() {
+//	        result.setValue(num1.doubleValue() * num2.doubleValue());
+//	        operations.add(new Operation(num1.doubleValue(), " * ", num2.doubleValue(), result.doubleValue()));
+//	    }
 
-//	public void divide()
-//	{
-//		result.setValue(num1.doubleValue()*num2.doubleValue());
-//		operations.add(new Operation(num1.doubleValue()," / ",num2.doubleValue(),result.doubleValue()));
-//	}
+	public void divide()
+	{
+		result.setValue(num1.doubleValue()*num2.doubleValue());
+		operations.add(new Operation(num1.doubleValue()," / ",num2.doubleValue(),result.doubleValue()));
+	}
 	
-	 public void divide() {
-	        if (num2.get() == 0) {
-	        	System.out.println("Cannot divide by zero");
-	            throw new ArithmeticException("Cannot divide by zero");
-	        }
-	        result.setValue(num1.doubleValue() / num2.doubleValue());
-	        operations.add(new Operation(num1.doubleValue(), " / ", num2.doubleValue(), result.doubleValue()));
-	    }
+//	 public void divide() {
+//	        if (num2.get() == 0) {
+//	        	System.out.println("Cannot divide by zero");
+//	            throw new ArithmeticException("Cannot divide by zero");
+//	        }
+//	        result.setValue(num1.doubleValue() / num2.doubleValue());
+//	        operations.add(new Operation(num1.doubleValue(), " / ", num2.doubleValue(), result.doubleValue()));
+//	    }
 
 	public DoubleProperty getNum1()
 	{

@@ -45,38 +45,42 @@ public class MainController
 		HistoryView.setItems(model.getOperations());	
 	}
 
+	// no adjustment
 	@FXML
 	void onAddButton(ActionEvent event)
 	{
 		model.add();
 	}
 
+	// no adjustment
 	@FXML
 	void onMultiplyButton(ActionEvent event)
 	{
 		model.multiply();
 	}
 
+	// no adjustment
 	@FXML
 	void onSubButton(ActionEvent event)
 	{
 		model.subtract();
 	}
 	
+	// adjustment -> calling divide instead of multiply
 	@FXML
     void onDivideButton(ActionEvent event) 
 	{
-		model.multiply();
+		model.divide();
     }
 
-	
+	// no adjustment
 	@FXML
     void onNumOnePressed(MouseEvent event) 
 	{
 		NumOneTF.clear();
     }
 	
-	
+	// no adjustment
 	 @FXML
 	 void onNumTwoPressed(MouseEvent event) 
 	 {

@@ -11,7 +11,8 @@ public class Operation
 	{
 		super();
 		this.num1 = num1;
-		this.num1 = num1;
+		// seting wrong
+		this.num2 = num2;
 		this.op = op;
 		this.result = result;
 	}

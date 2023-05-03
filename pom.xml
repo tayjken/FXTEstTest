@@ -45,6 +45,11 @@
 			<version>3.13.2</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>test1</groupId>
+			<artifactId>test1</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

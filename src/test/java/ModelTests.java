@@ -1,4 +1,4 @@
-package model;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import model.CalcModel;
 
 class ModelTests
 {
@@ -82,6 +83,8 @@ class ModelTests
 		calcModel.divide();
 		assertEquals(-5, calcModel.getResult().doubleValue());
 }
+	
+	
 		
 
 }

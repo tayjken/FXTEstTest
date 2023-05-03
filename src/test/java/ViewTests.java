@@ -39,6 +39,8 @@ class ViewTests
 		stage.show();
 	}
 	
+	// using the FXrobot to simulate the interactions
+	// when input1 click -> types in value of input 1 same with input 2
 	public void roboinputs(FxRobot robot, String input1, String input2)
 	{
 		robot.clickOn("#input1");
@@ -47,7 +49,7 @@ class ViewTests
 		robot.write(input2);
 	}
 	
-
+	// using the assertThat to check the label object that matches the value of total
 	public void result(FxRobot robot, String total)
 	{
 		Assertions.assertThat(robot.lookup("#total").queryAs(Label.class)).hasText(total);
@@ -56,13 +58,18 @@ class ViewTests
 	public void checkingOutcome(FxRobot robot, String button, String before,
 			String input1, String input2, String after)
 	{
+		// verifying that the inital value matches the before 
 		result(robot, before);
+		// inputs the values of input1 & input2
 		roboinputs(robot, input1, input2);
 		robot.clickOn(button);
+		// verifying that the inital value matches the after
 		result(robot, after);
 		
 	}
 	
+	// want the robot to find the listview object with button
+	// and return it as a liewview of operation objects
 	@SuppressWarnings("unchecked")
 	ListView<Operation> getOperations(FxRobot robot)
 	{
@@ -73,7 +80,8 @@ class ViewTests
 	@Test
 	public void Test(FxRobot robot)
 	{
-		
+		// expection array defines the operations with all 4 combos
+		// each operation has its expected result already calculated
 		Operation[] expection = {
 				new Operation(1.0, " + ", 1.0, 2.0),
 				new Operation(10.0, " - ", 5.0, 5.0),
@@ -87,7 +95,10 @@ class ViewTests
 				
 		};
 
+		// need getOperations called with the robot object to retrive the listview 
+		// which contains the operation objects
 		ListView<Operation> operations = getOperations(robot);
+		// used to verify that the operations list is empty 
 		Assertions.assertThat(operations).isEmpty();
 		
 		checkingOutcome(robot, "#addButton", "0", "1", "1", "2");
@@ -100,7 +111,9 @@ class ViewTests
 		checkingOutcome(robot, "#multiplyButton", "-11", "-5", "5", "-25");
 		checkingOutcome(robot, "#divideButton", "-25", "-50", "10", "-5");
 
-		
+		// operations list of operations objects is checked using the assertThat
+		// to verify that it has exactly the same number of items as the expection 
+		// of the array that was created above
 		Assertions.assertThat(operations).hasExactlyNumItems(expection.length);
 		
 		// comparing both lists
